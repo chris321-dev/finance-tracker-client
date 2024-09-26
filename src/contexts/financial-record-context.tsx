@@ -33,7 +33,9 @@ export const FinancialRecordsProvider = ({
 
     const fectRecords = async () => {
         if (!user) return
-        const response = await fetch(`http://localhost:3001/financial-records/getAllByUserID/${user.id}`)
+        // const response = await fetch(`http://localhost:3001/financial-records/getAllByUserID/${user.id}`)
+        const response = await fetch(`https://finance-tracker-server-three.vercel.app/getAllByUserID/${user.id}`)
+        
 
         if (response.ok) {
             const records = await response.json()

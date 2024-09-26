@@ -1,0 +1,130 @@
+/* General page styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+}
+
+.app-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #3498db; /* Blue shade that matches button colors */
+  padding: 10px 20px;
+  /* padding-right: 50px; */
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  width: 100%;
+  height: 50px;
+}
+
+.navbar .logoDiv .logo1 {
+  height: 50px;
+  width: 100px;
+  padding: 10px;
+}
+
+.userLogo1 {
+  padding: 10px;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 50px;
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .nav-content {
+    margin: 0px
+  }
+}
+
+.sign-in-container {
+  /* margin-top: 300px; */
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-in-container button {
+  margin: 10px;
+}
+
+.sign-in-container button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #adadad;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.sign-in-container button:hover {
+  border-color: #3498db;
+  background-color: #837e7e;
+}
+
+.sign-in-container h2 {
+  color: #2c3e50;
+  font-size: 32px;
+  padding: 5px;
+}
+
+.sign-in-container p {
+  color: #2c3e50;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0 5px;
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.navbar a {
+  color: white; /* Ensures links are white */
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #e0e0e0; /* Light grey for hover effect */
+}
+
+/* Specific styling for Clerk's UserButton if needed */
+.clerk-user-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.clerk-user-button:hover {
+  color: #e0e0e0; /* Consistency in hover effects */
+}
+
+/* Additional styles to ensure text and elements are vertically aligned properly */
+/* .navbar * {
+} */

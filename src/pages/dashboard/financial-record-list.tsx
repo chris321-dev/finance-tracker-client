@@ -94,6 +94,7 @@ export const FinancialRecordList = () => {
             <div className="note1">
             <span style={{color: "red"}}>NB:</span> Click any cell in the table (except Date and Pay. columns) to edit the record.
             </div>
+            <div className="table-cont">
             <table {...getTableProps()} className="table">
                 <thead>
                     {headerGroups.map((hg) => (
@@ -121,6 +122,7 @@ export const FinancialRecordList = () => {
                     })}
                 </tbody>
             </table>
+            </div>
         </div>
     )
 }

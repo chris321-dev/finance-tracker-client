@@ -1,4 +1,16 @@
 /* Centered container for the app */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
 .dashboard-container {
     width: 80%;
     margin-top: 70px;

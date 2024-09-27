@@ -1,19 +1,33 @@
 import './App.css'
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { Dashboard } from './pages/dashboard'
 import { Auth } from './pages/auth'
 import { FinancialRecordsProvider } from './contexts/financial-record-context'
-import { SignedIn, UserButton, useAuth, useUser } from "@clerk/clerk-react"
+import { SignedIn, UserButton, useAuth } from "@clerk/clerk-react"
 import { dark } from '@clerk/themes'
 import imageLogo from './assets/chrisDev-logo.png'
 
 function App() {
-   const { user } = useUser()
   const { isLoaded, isSignedIn } = useAuth() // To handle loading and auth state
 
   if (!isLoaded) {
     return <div>Loading...</div> // Show a loader until Clerk has checked the user's auth state
   }
+
+
+   const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  // Update state based on window size
+  const checkScreenSize = () => {
+    setIsLargeScreen(window.innerWidth >= 750);
+  };
+
+  useEffect(() => {
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   return (
     <Router>
@@ -27,8 +41,8 @@ function App() {
               </a>
             </div>
             <div className='userLogo1'>
-              <SignedIn style={{wordBreak: "break-all"}}>
-                <UserButton {user?.firstName} appearance={{ baseTheme: dark }} />
+              <SignedIn>
+                <UserButton showName={isLargeScreen} appearance={{ baseTheme: dark }} />
               </SignedIn>
             </div>
           </div>

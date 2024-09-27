@@ -113,6 +113,10 @@ html {
   color: #e0e0e0; /* Light grey for hover effect */
 }
 
+.cl-internal-1eekank {
+  font-size: 0.9rem !important;
+}
+
 /* Specific styling for Clerk's UserButton if needed */
 .clerk-user-button {
   background-color: transparent;

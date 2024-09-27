@@ -146,6 +146,7 @@ body {
     padding: 12px 15px;
     border: 1px solid #ddd; /* Light grey border for cells */
     text-align: left;
+    font-size: 16px;
   }
   
   .table td {
@@ -182,6 +183,10 @@ body {
       width: 95%;
     }
 
+    .table th {
+      font-weight: normal;
+    }
+
     .table-container{
       margin: 15px 0 30px;
     }
@@ -195,4 +200,11 @@ body {
       font-size: 17px;
     }
   }
+
+@media (max-width: 385px) {
+  .table th,
+  .table td {
+    font-size: 14px;
+  }
+}
 

@@ -1,5 +1,4 @@
 import './App.css'
-import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { Dashboard } from './pages/dashboard'
 import { Auth } from './pages/auth'
@@ -16,19 +15,6 @@ function App() {
   }
 
 
-   const [isLargeScreen, setIsLargeScreen] = useState(false);
-
-  // Update state based on window size
-  const checkScreenSize = () => {
-    setIsLargeScreen(window.innerWidth >= 750);
-  };
-
-  useEffect(() => {
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
-
   return (
     <Router>
       <div className='app-container'>
@@ -42,7 +28,7 @@ function App() {
             </div>
             <div className='userLogo1'>
               <SignedIn>
-                <UserButton showName={isLargeScreen} appearance={{ baseTheme: dark }} />
+                <UserButton appearance={{ baseTheme: dark }} />
               </SignedIn>
             </div>
           </div>
